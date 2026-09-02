@@ -8,10 +8,10 @@
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
-                indicators[i].classList.remove('active');
+                if (indicators[i]) indicators[i].classList.remove('active');
             });
             slides[index].classList.add('active');
-            indicators[index].classList.add('active');
+            if (indicators[index]) indicators[index].classList.add('active');
         }
 
         function nextSlide() {
