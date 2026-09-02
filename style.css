@@ -681,10 +681,18 @@
         /* Pie de página institucional */
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 40px;
             padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col {
+            text-align: center;
+        }
+
+        .footer-col .logo-container {
+            justify-content: center;
         }
 
         .footer-col h4 {
@@ -770,6 +778,20 @@
             }
             .main-container, .coverage-section, .cta-box-main, .footer-grid {
                 grid-template-columns: 1fr;
+            }
+            .hero-left {
+                top: auto;
+                bottom: 112px;
+                left: 8%;
+                width: 84%;
+                transform: none;
+                gap: 14px;
+            }
+            .hero-left p {
+                max-width: 560px;
+            }
+            .carousel-slide::after {
+                background: linear-gradient(to top, rgba(4, 20, 39, 0.9), rgba(4, 20, 39, 0.35) 58%, rgba(4, 20, 39, 0.08));
             }
             .hero-left h1, .cta-content h2, .noticias-titles h2 {
                 font-size: 30px;
