@@ -32,6 +32,25 @@
 
         slideInterval = setInterval(nextSlide, 4500);
 
+        const menuToggle = document.querySelector('.menu-toggle');
+        const header = document.querySelector('header');
+        const menuLinks = document.querySelectorAll('#main-menu a');
+
+        function toggleMenu() {
+            const isOpen = header.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                header.classList.remove('menu-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menú');
+            });
+        });
+
         // Control de pestañas Semanal / Mensual
         function setPeriod(period) {
             const btnSemanal = document.getElementById('btnSemanal');
