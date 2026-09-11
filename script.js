@@ -60,11 +60,11 @@
             if (period === 'semanal') {
                 btnSemanal.classList.add('active');
                 btnMensual.classList.remove('active');
-                periodLabel.textContent = "Período: 30-ago. al 06-sept.";
+                periodLabel.textContent = "Período: 30-ago.";
             } else {
                 btnMensual.classList.add('active');
                 btnSemanal.classList.remove('active');
-                periodLabel.textContent = "Período: Mes en curso (Agosto - Septiembre)";
+                periodLabel.textContent = "Período: Mes en curso (Septiembre)";
             }
         }
     
