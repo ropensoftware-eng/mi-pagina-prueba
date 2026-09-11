@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sucregas - Distribución de GLP</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
@@ -55,23 +54,22 @@
             </div>
         </div>
     </main>
+
     <section class="logo-slider-section">
-    <div class="logo-slider">
-        <div class="logo-slide-track">
-            <div class="logo-item"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
-            <div class="logo-item"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
-            <div class="logo-item"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
-            <div class="logo-item"><img src="img/GASCOMUNAL.png" alt="Aliado 4"></div>
-            
-
-           <div class="logo-item"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
-            <div class="logo-item"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
-            <div class="logo-item"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
-            <div class="logo-item"><img src="img/GASCOMUNAL.png" alt="Aliado 4"></div>
+        <div class="logo-slider">
+            <div class="logo-slide-track">
+                <div class="logo-item"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
+                <div class="logo-item"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
+                <div class="logo-item"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
+                <div class="logo-item"><img src="img/GASCOMUNAL.png" alt="Aliado 4"></div>
+                <div class="logo-item"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
+                <div class="logo-item"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
+                <div class="logo-item"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
+                <div class="logo-item"><img src="img/GASCOMUNAL.png" alt="Aliado 4"></div>
+            </div>
         </div>
-    </div>
+    </section>
 
-</section>
     <section id="servicios" class="services-section">
         <div class="section-header">
             <span class="section-subtitle">Servicios de suministro</span>
@@ -85,7 +83,6 @@
                         <h3>ATENCIÓN COMERCIAL</h3>
                         <p>Atención para comercios, instituciones y empresas que requieren orientación y continuidad de suministro.</p>
                     </div>
-            
                 </div>
             </a>
 
@@ -96,7 +93,6 @@
                         <h3>ATENCIÓN EXPRESS</h3>
                         <p>Canal de respuesta directa para solicitudes que requieren orientación.</p>
                     </div>
-
                 </div>
             </a>
 
@@ -107,12 +103,9 @@
                         <h3>ATENCIÓN RESIDENCIAL</h3>
                         <p>Orientación para recargar venta y distribución de GLP destinadas a hogares y comunidades.</p>
                     </div>
-                    
                 </div>
             </a>
-            
         </div>
-        
     </section>
 
     <section id="cobertura" class="coverage-section fondo-blanco">
@@ -120,21 +113,21 @@
             <span class="subtitle" style="color: #f39c12;">Ubicación</span>
             <h2>Presencia para toda la población del estado Sucre</h2>
             <p>Una red de atención diseñada para orientar a comunidades, hogares, comercios y empresas sobre las rutas y puntos de distribución disponibles.</p>
-            
         </div>
         <div class="coverage-card-right">
-           <div class="map"><iframe src="https://www.google.com/maps?q=Oficinas+Administrativas+SucreGas&amp;z=17&amp;t=m&amp;hl=es&amp;output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map of Oficinas Administrativas SucreGas"></iframe><a href="https://sites.google.com/view/embed-maps/" style="position:absolute;left:8px;bottom:1px;z-index:999;height:10px;line-height:10px;font-family:Roboto,Arial,sans-serif;font-size:10px;font-weight:400;color:#5f6368;text-decoration:none;white-space:nowrap;opacity:.95;text-shadow:0 1px 1px rgba(255,255,255,.95);cursor:pointer;"></a></div>
+           <div class="map"><iframe src="https://www.google.com/maps?q=Oficinas+Administrativas+SucreGas&amp;z=17&amp;t=m&amp;hl=es&amp;output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map of Oficinas Administrativas SucreGas"></iframe></div>
             <h3>NOS ENCONTRAMOS:</h3>
             <p>AV. CACIQUE MARAGUEY, SECTOR EL DIQUE, CUMANÁ ESTADO SUCRE.</p>
         </div>
     </section>
 
+    <!-- SECCIÓN DE ESTADÍSTICAS MEJORADA -->
     <section class="stats-ops-section">
         <div class="stats-ops-header">
             <div>
                 <span class="subtitle">Seguimiento operativo</span>
                 <h2>Estadísticas de atención y distribución</h2>
-                <p>Consulta el consolidado de solicitudes, distribution realizada y atenciones registradas por municipio.</p>
+                <p>Consulta el consolidado de solicitudes, distribución realizada y atenciones registradas por municipio.</p>
             </div>
             <div class="filter-tabs">
                 <button class="filter-btn active" id="btnSemanal" onclick="setPeriod('semanal')">Semanal</button>
@@ -151,7 +144,8 @@
                         <h4>DISTRIBUCIÓN DE GLP</h4>
                         <div class="stat-op-icon">📋</div>
                     </div>
-                    <div class="stat-op-value">1.424.260 GAL.</div>
+                    <!-- ID para cambiar valor de GLP -->
+                    <div class="stat-op-value" id="stat-glp">1.424.260 GAL.</div>
                 </div>
                 <div class="stat-op-footer">En el período seleccionado</div>
             </div>
@@ -162,7 +156,8 @@
                         <h4>CISTERNAS DISTRIBUIDAS</h4>
                         <div class="stat-op-icon">📦</div>
                     </div>
-                    <div class="stat-op-value">177</div>
+                    <!-- ID para cambiar valor de Cisternas -->
+                    <div class="stat-op-value" id="stat-cisternas">177</div>
                 </div>
                 <div class="stat-op-footer">En el período seleccionado</div>
             </div>
@@ -173,7 +168,8 @@
                         <h4>FAMILIAS ATENDIDAS</h4>
                         <div class="stat-op-icon">📍</div>
                     </div>
-                    <div class="stat-op-value">214.283</div>
+                    <!-- ID para cambiar valor de Familias -->
+                    <div class="stat-op-value" id="stat-familias">214.283</div>
                 </div>
                 <div class="stat-op-footer">En el período seleccionado</div>
             </div>
@@ -186,9 +182,7 @@
                 <span class="subtitle">Avisos operativos</span>
                 <h2>SUCREGAS INFORMA:</h2>
             </div>
-            <div class="noticias-badge-circle">
-                📢
-            </div>
+            <div class="noticias-badge-circle">📢</div>
         </div>
 
         <div class="noticias-grid">
@@ -200,13 +194,12 @@
                 </div>
             </div>
             <div class="noticia-card">
-                
                 <div>
                     <img src="img/planvacacional.png" alt="Atención Residencial" height="200px" width="200px">
-                     <img src="img/planvacacional2.png" alt="Atención Residencial" height="200px" width="200px">
+                    <img src="img/planvacacional2.png" alt="Atención Residencial" height="200px" width="200px">
                     <div>
-                     <h3>Plan Vacacional Sucregas</h3>
-                    <p></p>
+                        <h3>Plan Vacacional Sucregas</h3>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -229,22 +222,7 @@
             </div>
         </div>
     </section>
-    <script src="script.js"></script>
-  <section class="logo-slider-section">
-    <div class="logo-slider">
-        <div class="logo-slide-track">
-            <div class="logo-item"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
-            <div class="logo-item"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
-            <div class="logo-item"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
-            <div class="logo-item"><img src="img/GASCOMUNAL.png" alt="Aliado 4"></div>
-            
 
-           <div class="logo-item"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
-            <div class="logo-item"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
-            <div class="logo-item"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
-            <div class="logo-item"><img src="img/GASCOMUNAL.png" alt="Aliado 4"></div>
-        </div>
-    </div>
-</section>
+    <script src="script.js"></script>
 </body>
 </html>
