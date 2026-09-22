@@ -1,103 +1,34 @@
-// Carrusel Automático
-let slideIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const indicators = document.querySelectorAll('.indicator');
-let slideInterval;
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (indicators[i]) indicators[i].classList.remove('active');
-    });
-    slides[index].classList.add('active');
-    if (indicators[index]) indicators[index].classList.add('active');
-}
+        const ubicacionesSedes = {
+            cumana: {
+                titulo: "Planta Cumaná (Sector Los Molinos)",
+                url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.771624107857!2d-64.19370272584717!3d10.439688689689348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c3271f643fe70b5%3A0x4fefac10f0bc55e6!2sPlanta%20de%20llenado%20PDVSA%20GAS!5e0!3m2!1ses!2sve!4v1790005624894!5m2!1ses!2sve"
+            },
+            carupano1: {
+                titulo: "Planta Carúpano 1 (Troncal 10)",
+                url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4663.036488983157!2d-63.26864735919756!3d10.646955562156839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c33c356df0b7157%3A0x1a4c01a14628aeba!2sCDT%20Jos%C3%A9%20Francisco%20Berm%C3%BAdez.!5e0!3m2!1ses!2sve!4v1790006151598!5m2!1ses!2sve"
+            },
+            carupano2: {
+                titulo: "Planta Carúpano 2 (Troncal 9)",
+                url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7842.4295510572165!2d-63.277602195739746!3d10.64041617802411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c33c337371ec391%3A0x98ca9cf953354a03!2sP.D.V%20Comunal!5e0!3m2!1ses!2sve!4v1790006886284!5m2!1ses!2sve"
+            },
+            guiria: {
+                titulo: "Planta Güiria (Municipio Valdez)",
+                url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.5675860367787!2d-62.31763622584456!3d10.597144189540902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c3425007d21e049%3A0xbb307fe767f7934b!2sPlanta%20de%20Llenado%20de%20Gas!5e1!3m2!1ses!2sve!4v1790011960924!5m2!1ses!2sve"
+            }
+        };
 
-function nextSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-}
+        function actualizarMapaSede(sedeKey) {
+            const mapIframe = document.getElementById('googleMapIframe');
+            const mapTitle = document.getElementById('mapTitle');
 
-function currentSlide(index) {
-    slideIndex = index;
-    showSlide(slideIndex);
-    resetTimer();
-}
-
-function resetTimer() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 4500);
-}
-
-slideInterval = setInterval(nextSlide, 4500);
-
-// Menú Móvil
-const menuToggle = document.querySelector('.menu-toggle');
-const header = document.querySelector('header');
-const menuLinks = document.querySelectorAll('#main-menu a');
-
-function toggleMenu() {
-    const isOpen = header.classList.toggle('menu-open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-}
-
-menuToggle.addEventListener('click', toggleMenu);
-menuLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-        header.classList.remove('menu-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Abrir menú');
-    });
-});
-
-// Control de pestañas Semanal / Mensual con actualización de capa de datos
-function setPeriod(period) {
-    const btnSemanal = document.getElementById('btnSemanal');
-    const btnMensual = document.getElementById('btnMensual');
-    const periodLabel = document.getElementById('periodLabel');
-
-    // Elementos donde se muestran las cifras
-    const statGlp = document.getElementById('stat-glp');
-    const statCisternas = document.getElementById('stat-cisternas');
-    const statFamilias = document.getElementById('stat-familias');
-
-    // Datos del periodo Semanal
-    const datosSemanal = {
-        label: "Período: agosto 2026.",
-        glp: "356.065 GAL.",
-        cisternas: "44",
-        familias: "53.570"
-    };
-
-    // Datos del periodo Mensual (Personalizables)
-    const datosMensual = {
-        label: "Período: Mes de Agosto",
-        glp: "1.424.260 GAL.",
-        cisternas: "177",
-        familias: "214.283"
-    };
-
-    if (period === 'semanal') {
-        // Cambiar clases de los botones
-        btnSemanal.classList.add('active');
-        btnMensual.classList.remove('active');
-
-        // Actualizar textos y valores
-        periodLabel.textContent = datosSemanal.label;
-        if (statGlp) statGlp.textContent = datosSemanal.glp;
-        if (statCisternas) statCisternas.textContent = datosSemanal.cisternas;
-        if (statFamilias) statFamilias.textContent = datosSemanal.familias;
-
-    } else if (period === 'mensual') {
-        // Cambiar clases de los botones
-        btnMensual.classList.add('active');
-        btnSemanal.classList.remove('active');
-
-        // Actualizar textos y valores
-        periodLabel.textContent = datosMensual.label;
-        if (statGlp) statGlp.textContent = datosMensual.glp;
-        if (statCisternas) statCisternas.textContent = datosMensual.cisternas;
-        if (statFamilias) statFamilias.textContent = datosMensual.familias;
-    }
-}
+            if (ubicacionesSedes[sedeKey]) {
+                mapIframe.style.opacity = '0';
+                setTimeout(() => {
+                    mapTitle.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${ubicacionesSedes[sedeKey].titulo}`;
+                    mapIframe.src = ubicacionesSedes[sedeKey].url;
+                    mapIframe.style.opacity = '1';
+                }, 200);
+            }
+        }
+   

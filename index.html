@@ -1,28 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucre Gas | Energía e Innovación para tu Hogar y Negocio</title>
+    
+    <!-- Fuentes de Google (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    
 </head>
 <body>
 
+    <!-- NAVEGACIÓN -->
     <header>
-       
-        
+        <div class="logo-container">
+            <img src="img/LOGOAZUL.png" alt="Sucre Gas Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#novedades">Novedades</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="https://tartness-silicon-prepay.ngrok-free.dev/Sistema-web/login" class="btn-header">Solicitar Gas</a></li>
+        </ul>
     </header>
 
-    
-        
-             
-         
+    <!-- PORTADA / HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="hero-badge">Servicio Seguro y Confiable</span>
+            <h1 class="hero-title">Energía que mueve a Sucre!</h1>
+            <p class="hero-description">Llevamos soluciones de gas doméstico e industrial con máxima seguridad, rapidez y el mejor servicio garantizado para tu tranquilidad.</p>
+            <div class="hero-btns">
+                <a href="https://tartness-silicon-prepay.ngrok-free.dev/Sistema-web/login" class="btn-primary"><i class="fa-solid fa-fire"></i> Solicitar Cilindro</a>
+                <a href="#servicios" class="btn-secondary">Conocer Servicios</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- CARRUSEL INFINITO DE LOGOS DEBAJO DE LA PORTADA -->
+    <section class="logos-section">
+        <h3 class="logos-title">Nuestros Aliados e Instituciones</h3>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide"><img src="img/LOGOAZUL.png" alt="Aliado 1"></div>
+                <div class="slide"><img src="img/GASCOMUNAL.png" alt="Aliado 2"></div>
+                <div class="slide"><img src="img/GOBERNACION.png" alt="Aliado 3"></div>
+                <div class="slide"><img src="img/CORPOSUCRE.png" alt="Aliado 4"></div>
+                <div class="slide"><img src="img/LOGOAZUL.png" alt="Aliado 5"></div>
 
+                <div class="slide"><img src="img/GASCOMUNAL.png" alt="Aliado 1"></div>
+                <div class="slide"><img src="img/GOBERNACION.png" alt="Aliado 2"></div>
+                <div class="slide"><img src="img/CORPOSUCRE.png" alt="Aliado 3"></div>
+                <div class="slide"><img src="img/LOGOAZUL.png" alt="Aliado 4"></div>
+                <div class="slide"><img src="img/GASCOMUNAL.png" alt="Aliado 5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section class="section" id="servicios">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p>Brindamos coberturas integrales para satisfacer las necesidades de hogares, comercios e industrias.</p>
+        </div>
+
+        <div class="grid-3">
+            <a href="https://tartness-silicon-prepay.ngrok-free.dev/Sistema-web/login" class="card-link">
+                <div class="card" style="--bg-img: url('img/residencial.png');">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3>Gas Doméstico</h3>
+                    <p>Distribución de bombonas y cilindros de gas para uso residencial con entrega rápida directamente en la comunidad.</p>
+                </div>
+            </a>
+
+            <a href="https://tartness-silicon-prepay.ngrok-free.dev/Sistema-web/login" class="card-link">
+                <div class="card" style="--bg-img: url('img/comercio.png');">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Gas Comercial e Industrial</h3>
+                    <p>Suministro a gran escala para restaurantes, empresas e industrias con planes de abastecimiento garantizado.</p>
+                </div>
+            </a>
+
+            <a href="https://tartness-silicon-prepay.ngrok-free.dev/Sistema-web/login" class="card-link">
+                <div class="card" style="--bg-img: url('img/express.png');">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-truck-pickup"></i>
+                    </div>
+                    <h3>Atención express</h3>
+                    <p>Canal de respuesta directa para solicitudes que requieren orientación.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOVEDADES, FLYERS Y VIDEO -->
+    <section class="section" id="novedades" style="background-color: #ffffff;">
+        <div class="section-title">
+            <h2>Novedades y Galería Operativa</h2>
+            <p>Conoce nuestras campañas informativas, normas de seguridad y el trabajo que realizamos en el estado.</p>
+        </div>
+
+        <div class="media-container">
+            <!-- COLUMNA FLYERS INFORMATIVOS -->
+            <div>
+                <h3 style="color: var(--primary-navy); margin-bottom: 20px; font-size: 1.25rem;"><i class="fa-solid fa-bullhorn" style="color: var(--accent-blue);"></i> Flyers Informativos</h3>
+                <div class="flyers-grid">
+                    <div class="flyer-card">
+                        <div class="flyer-img-wrapper">
+                            <img src="img/planvacacional.jpg" alt="Medidas de Seguridad">
+                        </div>
+                        <div class="flyer-info">
+                            <h4>Plan Vacacional</h4>
+                            <p>Un total de 42 niños, disfrutaron el Plan vacaional Sucregas2026.</p>
+                        </div>
+                    </div>
+                    <div class="flyer-card">
+                        <div class="flyer-img-wrapper">
+                            <img src="img/servicio.jpg" alt="Atención Directa">
+                        </div>
+                        <div class="flyer-info">
+                            <h4>Solicitud de Transporte</h4>
+                            <p>Dirigete a nuestra sede Principal de Sucregas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA VIDEO INTERACTIVO -->
+            <div>
+                <div class="video-card">
+                    <h3><i class="fa-solid fa-circle-play"></i> Video Institucional</h3>
+                    <div class="video-wrapper">
+                        <video controls poster="img/camion.png">
+                            <source src="img/transporte.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS Y UBICACIÓN DE PLANTAS -->
+    <section class="section" id="nosotros">
+        <div class="locations-wrapper">
+            <div class="locations-info">
+                <h2>NOSOTROS</h2>
+                <p class="subtitle-text">Garantizamos una red estratégica de distribución de gas licuado de petróleo (GLP) en todo el estado.</p>
+                
+                <!-- CARD DE HORARIOS ESTRATÉGICA -->
+                <div class="schedule-card">
+                    <div class="schedule-header">
+                        <i class="fa-regular fa-clock"></i> Horario de Atención Operativa
+                    </div>
+                    <div class="schedule-grid">
+                        <div class="schedule-item">
+                            <span class="label">Lunes a Viernes</span>
+                            <span class="time">8:00 AM - 3:00 PM</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="label">Sábados</span>
+                            <span class="time">8:00 AM - 12:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Atención rápida, eficiente y directa</li>
+                    <li><i class="fa-solid fa-check"></i> Personal técnico altamente capacitado</li>
+                    <li><i class="fa-solid fa-check"></i> Estándares estrictos de seguridad industrial</li>
+                </ul>
+
+                <!-- SELECTOR MODERNO DE PLANTAS -->
+                <div class="select-box-wrapper">
+                    <label for="selectUbicacionSede">Ubicación Estratégica de Plantas</label>
+                    <div class="custom-select-container">
+                        <select id="selectUbicacionSede" class="custom-select" onchange="actualizarMapaSede(this.value)">
+                            <option value="cumana" >Planta Cumaná - Sector Los Molinos</option>
+                            <option value="carupano1" selected>Planta Carúpano 1 - Troncal 10</option>
+                            <option value="carupano2">Planta Carúpano 2 - Troncal 9</option>
+                            <option value="guiria">Planta Güiria - Mpio. Valdez</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR DE MAPA Y VISUALIZADOR -->
+            <div class="map-interactive-card">
+                <div class="map-card-header">
+                    <h3 id="mapTitle"><i class="fa-solid fa-location-dot"></i> Oficinas Administrativa (El Dique)</h3>
+                    <span class="status-badge">Operativa</span>
+                </div>
+                <div class="map-frame-container">
+                    <iframe id="googleMapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.323029060717!2d-64.18852962584666!3d10.475181089655875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c32710079dfa159%3A0xed20ff8d540f7759!2sOficinas%20Administrativas%20SucreGas!5e0!3m2!1ses!2sve!4v1790004046112!5m2!1ses!2sve" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3 style="color: var(--accent-yellow); font-size: 1.5rem; margin-bottom: 10px;">SUCRE GAS</h3>
+                <p>Comprometidos con brindar la energía que impulsa los hogares y las empresas de la región.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#novedades">Novedades</a></li>
+                    <li><a href="https://tartness-silicon-prepay.ngrok-free.dev/Sistema-web/login">Solicitar Gas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> 0293 4511150</li>
+                    <li><i class="fa-solid fa-envelope"></i> contacto@sucregas.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Estado Sucre, Venezuela</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sucre Gas - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DE MAPAS INTERACTIVOS -->
    
-
-
-
-
-   
-       
-
+    <script src="script.js"></script>
 </body>
 </html>
