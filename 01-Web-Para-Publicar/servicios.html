@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios y Solicitudes — SucreGas</title>
+  <meta name="description" content="Gas doméstico en cilindros de 10, 18 y 43 kg, gas comercial e industrial y gas por tubería o granel en el Estado Sucre. Solicita tu recarga en línea.">
+  <link rel="icon" href="assets/img/logo.png" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body data-page="servicios">
+  <header class="site-header" data-header></header>
+
+  <main>
+    <!-- ===================== ENCABEZADO ===================== -->
+    <section class="page-head">
+      <div class="container">
+        <span class="eyebrow">Servicios y Solicitudes</span>
+        <h1>Servicios de gas para todo el estado</h1>
+        <p class="lead">Comunidades, granel residencial, comercial e institucional, además de atención directa: elige el tipo de suministro que necesitas y solicítalo en línea.</p>
+      </div>
+    </section>
+
+    <!-- ===================== COMUNIDADES ===================== -->
+    <section class="section" id="comunidades" style="padding-top:20px">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="h-section">Comunidades (10 kg, 18 kg y 43 kg)</h2>
+          <p class="lead">Suministro de gas doméstico en cilindros de diversas capacidades, diseñado para garantizar el abastecimiento directo en los sectores y comunidades del estado Sucre. A través de una logística organizada junto al poder popular, llevamos cilindros de 10 kg, 18 kg y 43 kg para cubrir con eficacia las necesidades energéticas de cada hogar.</p>
+        </div>
+        <div class="grid grid-4">
+          <div class="card-shell reveal">
+            <div class="card-shell__inner">
+              <div style="font-size:2rem;font-weight:800;color:var(--blue-700);letter-spacing:-.02em">10 kg</div>
+              <p style="font-size:14.5px;color:var(--text-muted);margin-top:6px">Ideal para hogares pequeños y cocinas de uso ligero.</p>
+            </div>
+          </div>
+          <div class="card-shell reveal" data-delay="1">
+            <div class="card-shell__inner">
+              <div style="font-size:2rem;font-weight:800;color:var(--blue-700);letter-spacing:-.02em">18 kg</div>
+              <p style="font-size:14.5px;color:var(--text-muted);margin-top:6px">La presentación estándar para la mayoría de los hogares.</p>
+            </div>
+          </div>
+          <div class="card-shell reveal" data-delay="2">
+            <div class="card-shell__inner">
+              <div style="font-size:2rem;font-weight:800;color:var(--blue-700);letter-spacing:-.02em">27 kg</div>
+              <p style="font-size:14.5px;color:var(--text-muted);margin-top:6px">Presentación intermedia de mayor rendimiento.</p>
+            </div>
+          </div>
+          <div class="card-shell reveal" data-delay="3">
+            <div class="card-shell__inner">
+              <div style="font-size:2rem;font-weight:800;color:var(--blue-700);letter-spacing:-.02em">43 kg</div>
+              <p style="font-size:14.5px;color:var(--text-muted);margin-top:6px">Mayor rendimiento para familias grandes o pequeños negocios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMULARIO DE PEDIDO ===================== -->
+    <section class="section section--tint" id="pedir">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:start">
+          <div class="reveal">
+            <div class="section-head" style="margin-bottom:26px">
+              <h2 class="h-section">Solicita tu recarga Express</h2>
+              <p class="lead">Completa el formulario y confirma tu pedido. Te contactaremos con la fecha de despacho de tu sector.</p>
+            </div>
+            <form data-form="pedido" novalidate>
+              <div class="field">
+                <label>Presentación de bombona</label>
+                <div class="choice-grid cols-2">
+                  <label class="choice"><input type="radio" name="bombona" value="10" required><span class="dot"></span><span><b>10 kg</b><small>Hogar ligero</small></span></label>
+                  <label class="choice"><input type="radio" name="bombona" value="18" checked><span class="dot"></span><span><b>18 kg</b><small>Estándar</small></span></label>
+                  <label class="choice"><input type="radio" name="bombona" value="27"><span class="dot"></span><span><b>27 kg</b><small>Intermedia</small></span></label>
+                  <label class="choice"><input type="radio" name="bombona" value="43"><span class="dot"></span><span><b>43 kg</b><small>Familiar</small></span></label>
+                </div>
+              </div>
+              <div class="grid grid-2" style="gap:16px">
+                <div class="field">
+                  <label for="p-nombre">Nombre y apellido</label>
+                  <input class="input" id="p-nombre" type="text" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="field">
+                  <label for="p-cedula">Cédula</label>
+                  <input class="input" id="p-cedula" type="text" inputmode="numeric" placeholder="V-12.345.678" required>
+                </div>
+              </div>
+              <div class="grid grid-2" style="gap:16px">
+                <div class="field">
+                  <label for="p-tel">Teléfono</label>
+                  <input class="input" id="p-tel" type="tel" placeholder="0412-000-0000" required>
+                </div>
+                <div class="field">
+                  <label for="p-mun">Municipio</label>
+                  <select class="select" id="p-mun" required>
+                    <option value="" selected disabled>Selecciona tu municipio</option>
+                    <option>Andrés Eloy Blanco</option>
+                    <option>Andrés Mata</option>
+                    <option>Arismendi</option>
+                    <option>Bénitez</option>
+                    <option>Bermúdez</option>
+                    <option>Bolívar</option>
+                    <option>Cajigal</option>
+                    <option>Cruz Salmerón Acosta</option>
+                    <option>Libertador</option>
+                    <option>Mariño</option>
+                    <option>Mejía</option>
+                    <option>Montes</option>
+                    <option>Ribero</option>
+                    <option>Sucre (Cumaná)</option>
+                    <option>Valdez</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="p-dir">Parroquia / sector / dirección</label>
+                <input class="input" id="p-dir" type="text" placeholder="Ej: Sector El Peñón, calle principal, casa #12" required>
+              </div>
+              <div class="field">
+                <label for="p-nota">Nota (opcional)</label>
+                <input class="input" id="p-nota" type="text" placeholder="Punto de referencia, CLAP, etc.">
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 C 7.5 8 6 10.8 6 14 a6 6 0 0 0 12 0 c0 -3.2 -1.5 -6 -6 -11 Z"/></svg>
+                <span>Enviar pedido</span>
+              </button>
+              <p class="hint" style="text-align:center;margin-top:12px">Solicitud de demostración: no se realiza ningún despacho real.</p>
+
+              <div class="ticket-box pedido-confirm" data-pedido-box>
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
+                  <span class="dot" style="width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--green-soft);color:var(--green);flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 12 4 4 8-8"/></svg></span>
+                  <div>
+                    <b style="display:block;color:var(--text-strong);font-size:16px">¡Pedido registrado!</b>
+                    <span style="font-size:13px;color:var(--text-muted)">Guarda tu número para hacer seguimiento.</span>
+                  </div>
+                </div>
+                <div class="label">Número de pedido</div>
+                <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+                  <div class="num" data-pedido-num style="flex:1">—</div>
+                  <button class="btn btn-soft btn-sm" type="button" data-copy data-target="[data-pedido-num]" style="flex-shrink:0">Copiar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <aside class="reveal" data-delay="1" style="border:1px solid var(--border);border-radius:var(--radius-shell);overflow:hidden;box-shadow:var(--shadow-md)">
+            <img src="assets/img/camion.jpg" alt="Entrega de gas en las comunidades" style="width:100%;aspect-ratio:16/10;object-fit:cover">
+            <div style="padding:24px">
+              <h3 style="margin-bottom:10px">¿Cuándo llega el gas a mi zona?</h3>
+              <p style="font-size:14.5px;color:var(--text-muted)">El despacho se rige por un cronograma semanal por municipios. Consulta tu fecha antes de solicitar para planificar mejor.</p>
+              <a class="btn btn-soft" style="margin-top:18px" href="rutas.html#cronograma">Ver cronograma de la semana</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TARIFAS ===================== -->
+    <section class="section" id="tarifas">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Precios</span>
+          <h2 class="h-section">Tarifas vigentes</h2>
+          <p class="lead">Precios referenciales por presentación y tipo de servicio. Las tarifas oficiales pueden actualizarse según disposición del ente regulador.</p>
+        </div>
+        <div class="grid grid-3">
+          <!-- Residencial -->
+          <div class="card-shell reveal">
+            <div class="card-shell__inner price-card">
+              <div class="price-card__head">
+                <span class="price-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                <div>
+                  <h3>Residencial</h3>
+                  <p class="hint" style="margin-top:2px">Cilindros para el hogar</p>
+                </div>
+              </div>
+              <ul class="price-card__list">
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">10 kg</span>
+                  <span class="price-row__price">1,30 $</span>
+                </li>
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">18 kg <span class="badge badge--green">Más pedido</span></span>
+                  <span class="price-row__price">2,30 $</span>
+                </li>
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">27 kg</span>
+                  <span class="price-row__price">3,70 $</span>
+                </li>
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">43 kg</span>
+                  <span class="price-row__price">4,90 $</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Atención Directa -->
+          <div class="card-shell reveal" data-delay="1">
+            <div class="card-shell__inner price-card price-card--amber">
+              <div class="price-card__head">
+                <span class="price-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l1.5 4-2 1.5a11 11 0 0 0 6 6L16 13.5l4 1.5v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+                <div>
+                  <h3>Atención Directa</h3>
+                  <p class="hint" style="margin-top:2px">Gestión personalizada</p>
+                </div>
+              </div>
+              <ul class="price-card__list">
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">10 kg</span>
+                  <span class="price-row__price">3,30 $</span>
+                </li>
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">18 kg</span>
+                  <span class="price-row__price">5,80 $</span>
+                </li>
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">27 kg</span>
+                  <span class="price-row__price">8,60 $</span>
+                </li>
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9.5 3v2.2M14.5 3v2.2"/><path d="M7 7.5h10v8.5a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V7.5Z"/></svg></span>
+                  <span class="price-row__kg">43 kg</span>
+                  <span class="price-row__price">11,50 $</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Granel -->
+          <div class="card-shell reveal" data-delay="2">
+            <div class="card-shell__inner price-card price-card--green">
+              <div class="price-card__head">
+                <span class="price-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v7H5z"/><path d="M7 10v8a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-8"/></svg></span>
+                <div>
+                  <h3>Granel Residencial e Instituciones</h3>
+                  <p class="hint" style="margin-top:2px">Edificios, urbanismos e instituciones</p>
+                </div>
+              </div>
+              <ul class="price-card__list">
+                <li class="price-row">
+                  <span class="price-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v7H5z"/><path d="M7 10v8a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-8"/></svg></span>
+                  <span class="price-row__kg">1 Litro</span>
+                  <span class="price-row__price" style="color:var(--green)">0,08 $</span>
+                </li>
+              </ul>
+              <div style="margin-top:14px">
+                <span class="price-big">0,08 $ <small>/ litro</small></span>
+              </div>
+              <p style="font-size:14px;color:var(--text-muted);margin-top:10px">Suministro continuo y seguro mediante tanques estacionarios para condominios e instituciones.</p>
+            </div>
+          </div>
+        </div>
+        <p class="hint" style="margin-top:16px">Tarifas expresadas en dólares (USD) como referencia. Los montos en Bolívares se calculan a la tasa establecida por el BCV</p>
+      </div>
+    </section>
+
+    <!-- ===================== GRANEL RESIDENCIAL ===================== -->
+    <section class="section section--tint" id="granel-residencial">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:center">
+          <div class="reveal">
+            <span class="eyebrow">Edificios y urbanismos</span>
+            <h2 class="h-section" style="margin-top:14px">Granel Residencial</h2>
+            <p class="lead" style="margin-top:14px">Servicio especializado de distribución y recarga de gas licuado de petróleo (GLP) a granel, orientado a edificios, urbanismos y complejos residenciales equipados con tanques estacionarios. Garantizamos un suministro continuo, seguro y automatizado para la tranquilidad de los condominios y familias.</p>
+            <a class="btn btn-primary" style="margin-top:26px" href="atencion.html#pqr">Solicitar información</a>
+          </div>
+          <div class="reveal" data-delay="1">
+            <img src="assets/img/granel.jpg" alt="Suministro de gas a granel" style="width:100%;height:auto;border-radius:var(--radius-shell);box-shadow:var(--shadow-md)">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMERCIAL ===================== -->
+    <section class="section" id="comercial">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:center">
+          <div class="reveal" style="order:2">
+            <img src="assets/img/tanque.jpg" alt="Gas para el sector comercial" style="width:100%;height:auto;border-radius:var(--radius-shell);box-shadow:var(--shadow-md)">
+          </div>
+          <div class="reveal" style="order:1">
+            <span class="eyebrow">Negocios</span>
+            <h2 class="h-section" style="margin-top:14px">Comercial</h2>
+            <p class="lead" style="margin-top:14px">Soluciones energéticas confiables y de alto rendimiento para el sector comercial, incluyendo restaurantes, panaderías, hoteles y negocios en general. Proveemos el volumen y la constancia de gas necesarios para optimizar la operatividad y productividad de las actividades económicas de la región.</p>
+            <a class="btn btn-primary" style="margin-top:26px" href="atencion.html#pqr">Solicitar atención</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INSTITUCIONAL ===================== -->
+    <section class="section section--tint" id="institucional">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:center">
+          <div class="reveal">
+            <span class="eyebrow">Servicios esenciales</span>
+            <h2 class="h-section" style="margin-top:14px">Institucional</h2>
+            <p class="lead" style="margin-top:14px">Programa de abastecimiento prioritario y estratégico dirigido a centros de salud, instituciones educativas, comedores populares y dependencias públicas. Aseguramos el suministro continuo de gas para garantizar el funcionamiento ininterrumpido de servicios sociales esenciales.</p>
+          </div>
+          <div class="reveal" data-delay="1">
+            <div class="card-shell" style="border-color:var(--blue-200)">
+              <div class="card-shell__inner" style="background:var(--blue-50)">
+                <ul class="checklist">
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg>Centros de salud y ambulatorios</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg>Instituciones educativas</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg>Comedores populares</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg>Dependencias públicas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ATENCIÓN DIRECTA ===================== -->
+    <section class="section" id="atencion-directa">
+      <div class="container">
+        <div class="emergency-band emergency-band--blue reveal">
+          <span class="pulse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l1.5 4-2 1.5a11 11 0 0 0 6 6L16 13.5l4 1.5v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+          <div>
+            <h3>Atención Directa</h3>
+            <p>Canales y mecanismos de gestión personalizados orientados a dar respuesta oportuna a solicitudes especiales, casos prioritarios o requerimientos puntuales de la ciudadanía, optimizando los tiempos de respuesta y la eficiencia en la distribución del servicio.</p>
+          </div>
+          <a class="btn btn-primary" style="background:#fff;color:var(--blue-700);box-shadow:none" href="atencion.html">Ir al Centro de Atención</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-footer></footer>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

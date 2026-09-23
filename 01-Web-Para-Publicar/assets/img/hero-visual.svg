@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-label="Ilustración de referencia: cilindro de gas con llama">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f9fd"/>
+      <stop offset="1" stop-color="#e2edfb"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#5b97dc" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#5b97dc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cyl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3a6b"/>
+      <stop offset="0.45" stop-color="#1a5fbf"/>
+      <stop offset="0.75" stop-color="#2e77d0"/>
+      <stop offset="1" stop-color="#15529e"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#f5a524"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="flameIn" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#fcd34d"/>
+      <stop offset="1" stop-color="#fff7e0"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#15529e" opacity="0.10"/>
+    </pattern>
+  </defs>
+
+  <rect width="640" height="520" fill="url(#bg)"/>
+  <rect width="640" height="520" fill="url(#dots)"/>
+  <rect width="640" height="520" fill="url(#glow)"/>
+
+  <!-- base shadow -->
+  <ellipse cx="320" cy="462" rx="150" ry="20" fill="#0a2a4a" opacity="0.10"/>
+
+  <!-- flame -->
+  <path d="M320 30c-8 26-22 44-22 66a22 22 0 0 0 44 0c0-14-6-26-12-38-4 8-8 14-10 18z" fill="url(#flame)"/>
+  <path d="M320 66c-3 9-8 16-8 26a8 8 0 0 0 16 0c0-7-3-13-5-19z" fill="url(#flameIn)"/>
+
+  <!-- valve handle -->
+  <rect x="288" y="118" width="64" height="12" rx="6" fill="#0a2a4a"/>
+  <rect x="298" y="130" width="44" height="26" rx="7" fill="#15529e"/>
+  <rect x="290" y="156" width="60" height="12" rx="6" fill="#0e3a6b"/>
+
+  <!-- body -->
+  <rect x="264" y="168" width="112" height="252" rx="34" fill="url(#cyl)"/>
+  <rect x="282" y="190" width="14" height="206" rx="7" fill="#ffffff" opacity="0.16"/>
+  <rect x="336" y="214" width="8" height="130" rx="4" fill="#06182f" opacity="0.18"/>
+
+  <!-- foot ring -->
+  <rect x="252" y="424" width="136" height="18" rx="9" fill="#0a2a4a"/>
+
+  <!-- label plate -->
+  <rect x="278" y="286" width="84" height="58" rx="12" fill="#ffffff" opacity="0.92"/>
+  <circle cx="304" cy="310" r="7" fill="none" stroke="#1a5fbf" stroke-width="3"/>
+  <path d="M310 310l6-8" stroke="#f5a524" stroke-width="3" stroke-linecap="round"/>
+  <rect x="298" y="328" width="44" height="6" rx="3" fill="#1a5fbf"/>
+  <rect x="306" y="338" width="28" height="5" rx="2.5" fill="#8fb8ea"/>
+
+  <!-- floating chips -->
+  <g>
+    <rect x="404" y="150" width="150" height="54" rx="16" fill="#ffffff"/>
+    <rect x="404" y="150" width="150" height="54" rx="16" fill="none" stroke="#c4d9f4" stroke-width="1.5"/>
+    <circle cx="428" cy="177" r="12" fill="#e2edfb"/>
+    <path d="M428 171v12m-6-6h12" stroke="#1a5fbf" stroke-width="2.6" stroke-linecap="round"/>
+    <rect x="448" y="166" width="92" height="9" rx="4.5" fill="#0a2a4a"/>
+    <rect x="448" y="180" width="62" height="7" rx="3.5" fill="#93a3b8"/>
+  </g>
+  <g>
+    <rect x="118" y="360" width="158" height="54" rx="16" fill="#ffffff"/>
+    <rect x="118" y="360" width="158" height="54" rx="16" fill="none" stroke="#c4d9f4" stroke-width="1.5"/>
+    <circle cx="142" cy="387" r="12" fill="#e5f6ec"/>
+    <path d="m137 387 4 4 7-7" stroke="#16a34a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect x="162" y="376" width="100" height="9" rx="4.5" fill="#0a2a4a"/>
+    <rect x="162" y="390" width="74" height="7" rx="3.5" fill="#93a3b8"/>
+  </g>
+</svg>
