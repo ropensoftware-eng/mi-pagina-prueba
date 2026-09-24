@@ -1,0 +1,10 @@
+{
+  // Sitio estático (SPA de un solo archivo) desplegado como "assets-only Worker".
+  // Esto permite que `npx wrangler versions upload` sepa qué subir.
+  "name": "mi-pagina-prueba",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "single-page-application"
+  }
+}

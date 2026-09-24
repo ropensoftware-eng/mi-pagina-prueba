@@ -1,0 +1,6 @@
+# Archivos que NO se suben como assets públicos
+.git/
+.htaccess
+*.md
+wrangler.jsonc
+.assetsignore
