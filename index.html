@@ -1933,6 +1933,32 @@ table.data td:first-child, table.data th:first-child { font-weight: 700; color: 
   .has-cookiebar .mascot { bottom: calc(14px + var(--cookiebar-h, 0px)); }
 }
 .page{display:none}.page.is-active{display:block}
+
+/* --------------------------------------------------------------------------
+   Perfil de trabajador (página oculta — se abre con la cédula en la URL)
+   -------------------------------------------------------------------------- */
+.perfil-trabajador { max-width: 430px; margin: 0 auto; }
+.perfil-trabajador__card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 34px 26px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.perfil-trabajador__head { display: grid; justify-items: center; gap: 10px; margin-bottom: 20px; }
+.perfil-trabajador__avatar { width: 96px; height: 96px; }
+.perfil-trabajador__avatar svg { width: 44px; height: 44px; }
+.perfil-trabajador__foto { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--blue-100); display: block; }
+.perfil-trabajador__nombre { margin: 0; font-size: 1.35rem; color: var(--text-strong); line-height: 1.25; }
+.perfil-trabajador__datos { display: grid; border-top: 1px solid var(--border); text-align: left; }
+.perfil-trabajador__datos > div {
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  padding: 12px 2px; border-bottom: 1px solid var(--border);
+}
+.perfil-trabajador__datos dt { font-size: 13px; color: var(--text-muted); }
+.perfil-trabajador__datos dd { margin: 0; font-size: 14.5px; font-weight: 700; color: var(--text-strong); text-align: right; }
+.perfil-trabajador__datos a { color: var(--blue-600); text-decoration: none; }
   </style>
   <noscript><style>.reveal{opacity:1;transform:none}.page{display:block}</style></noscript>
 </head>
@@ -2100,10 +2126,10 @@ table.data td:first-child, table.data th:first-child { font-weight: 700; color: 
                 <h3 style="margin-bottom:8px">Cronograma de la semana</h3>
                 <p style="font-size:14.5px;color:var(--text-muted)">Revisa qué municipios y sectores reciben despacho cada día de esta semana.</p>
                 <span class="link">Ver cronograma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
-             -->
               </div>
             </div>
           </a>
+             -->
         </div>
       </div>
     </section>
@@ -3738,6 +3764,16 @@ table.data td:first-child, table.data th:first-child { font-weight: 700; color: 
 
       </div>
     </section>
+</div>
+
+<!-- ===================== PERFIL DE TRABAJADOR (oculto — sin enlace en el menú) ===================== -->
+<div class="page" data-page="trabajadores">
+  <section class="section" style="padding-top:48px;padding-bottom:64px">
+    <div class="container">
+      <!-- El JS pinta aquí ÚNICAMENTE la tarjeta del trabajador cuya cédula va en la URL -->
+      <div class="perfil-trabajador" data-perfil-trabajador></div>
+    </div>
+  </section>
 </div>
   </main>
   <footer class="site-footer" data-footer></footer>
@@ -6011,11 +6047,95 @@ table.data td:first-child, table.data th:first-child { font-weight: 700; color: 
   }
 })();
 
+/* ==========================================================================
+   SucreGas — Perfil de trabajador (oculto)
+   --------------------------------------------------------------------------
+   Base de datos embebida del personal. La página NO aparece en el menú:
+   se abre escribiendo en la URL la cédula del trabajador (ej.: index.html#V-12345678)
+   y muestra ÚNICAMENTE la información de ese trabajador con su foto centrada.
+
+   Para agregar trabajadores: añade una línea al array TRABAJADORES.
+   Cada cédula nueva se convierte automáticamente en una ruta de acceso.
+   foto: "" muestra el icono predeterminado; foto: "img/nombre.jpg" muestra su foto.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  // --- Base de datos del personal (embebida) ---
+  var TRABAJADORES = [
+    { cedula: "V-12345678", nombre: "Trabajador de Ejemplo", sede: "Cumaná — Sede Principal", activo: true, telefono: "0426-0000000", foto: "" }
+  ];
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function normalizarCedula(c) {
+    return String(c == null ? "" : c).replace("#", "").trim().toLowerCase();
+  }
+
+  // ¿El hash actual es la cédula de un trabajador registrado?
+  function esRutaTrabajador(hash) {
+    var h = normalizarCedula(hash);
+    if (!h) return false;
+    return TRABAJADORES.some(function (t) { return normalizarCedula(t.cedula) === h; });
+  }
+
+  function telLimpio(tel) {
+    return String(tel == null ? "" : tel).replace(/[^0-9+]/g, "");
+  }
+
+  // Trabajador cuya cédula coincide con el hash actual
+  function trabajadorDeHash() {
+    var h = normalizarCedula(location.hash);
+    return TRABAJADORES.filter(function (t) { return normalizarCedula(t.cedula) === h; })[0] || null;
+  }
+
+  // Icono predeterminado de prueba (persona, línea fina 24x24, estilo del sitio)
+  function avatarDefaultSVG() {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>';
+  }
+
+  function perfilHTML(t) {
+    var avatar = t.foto
+      ? '<img class="perfil-trabajador__foto" src="' + esc(t.foto) + '" alt="Foto de ' + esc(t.nombre) + '">'
+      : '<span class="avatar perfil-trabajador__avatar">' + avatarDefaultSVG() + "</span>";
+    var badge = t.activo ? '<span class="badge badge--green">Activo</span>' : '<span class="badge badge--red">Inactivo</span>';
+    return '<div class="perfil-trabajador__card">' +
+        '<div class="perfil-trabajador__head">' + avatar +
+          '<h1 class="perfil-trabajador__nombre">' + esc(t.nombre) + "</h1>" + badge +
+        "</div>" +
+        '<dl class="perfil-trabajador__datos">' +
+          "<div><dt>Cédula</dt><dd>" + esc(t.cedula) + "</dd></div>" +
+          "<div><dt>Sede de trabajo</dt><dd>" + esc(t.sede) + "</dd></div>" +
+          '<div><dt>Teléfono</dt><dd><a href="tel:' + esc(telLimpio(t.telefono)) + '">' + esc(t.telefono) + "</a></dd></div>" +
+        "</dl>" +
+      "</div>";
+  }
+
+  function pintarPerfil() {
+    var caja = document.querySelector("[data-perfil-trabajador]");
+    if (!caja) return;
+    var t = trabajadorDeHash();
+    caja.innerHTML = t ? perfilHTML(t) : "";
+  }
+
+  // Puente con el router: las cédulas del personal son alias de la página oculta
+  window.SucrePersonal = { esRutaTrabajador: esRutaTrabajador };
+
+  document.addEventListener("DOMContentLoaded", pintarPerfil);
+  window.addEventListener("hashchange", pintarPerfil);
+})();
+
 (function () {
   "use strict";
   var ROUTES = { 'inicio': 1, 'servicios': 1, 'oficina': 1, 'rutas': 1, 'atencion': 1, 'nosotros': 1, 'cuenta': 1, 'cookies': 1, 'privacidad': 1, 'terminos': 1, 'micuenta': 1 };
   function currentRoute() {
     var h = (location.hash || "#inicio").replace("#", "").split("/")[0];
+    // Cédula de un trabajador → abre el directorio interno oculto
+    if (window.SucrePersonal && window.SucrePersonal.esRutaTrabajador(h)) return "trabajadores";
     return ROUTES[h] ? h : "inicio";
   }
   function currentAnchor() {
